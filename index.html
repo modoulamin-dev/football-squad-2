@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brikama United · Nawettan 2026</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <span class="brand-title">BRIKAMA UNITED</span>
+      <span class="season-title">Nawettan 2026 · Squad</span>
+    </header>
+
+    <main class="app-container">
+      <h1 class="main-heading">THE SQUAD</h1>
+      <p class="sub-heading">
+        Every player, their shirt number, and their goals so far. Press the
+        button when they score.
+      </p>
+
+      <!-- Form Message Banner for Validation Errors -->
+      <div id="form-message" class="form-message"></div>
+
+      <!-- Add Player Form -->
+      <section class="form-section">
+        <h2 class="section-title">ADD A PLAYER</h2>
+        <form id="player-form" autocomplete="off">
+          <div class="form-group">
+            <label for="player-name">Player</label>
+            <input
+              type="text"
+              id="player-name"
+              placeholder="e.g. Modou Barrow"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="shirt-number">Shirt number</label>
+            <input
+              type="number"
+              id="shirt-number"
+              value="9"
+              min="1"
+              max="99"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="goals-so-far">Goals so far</label>
+            <input type="number" id="goals-so-far" value="0" min="0" required />
+          </div>
+
+          <!-- Added Custom Field Option permitted by Assignment Brief -->
+          <div class="form-group">
+            <label for="player-position">Position</label>
+            <select id="player-position">
+              <option value="Forward">Forward</option>
+              <option value="Midfielder">Midfielder</option>
+              <option value="Defender">Defender</option>
+              <option value="Goalkeeper">Goalkeeper</option>
+            </select>
+          </div>
+
+          <button type="submit" id="add-btn" class="btn-primary">
+            ADD TO SQUAD
+          </button>
+        </form>
+      </section>
+
+      <!-- Dynamic Squad Grid List Container -->
+      <section id="squad-list" class="squad-grid"></section>
+
+      <!-- Dynamic Summary Bar & Actions Section -->
+      <footer class="summary-bar">
+        <div id="summary-text" class="summary-info">
+          0 goals · no players registered yet
+        </div>
+        <button type="button" id="clear-btn" class="btn-secondary">
+          Clear the squad
+        </button>
+      </footer>
+    </main>
+
+    <footer class="app-footer">
+      CS200 · Fundamentals of Computer Science · JCC
+    </footer>
+  </body>
+</html>
